@@ -1,0 +1,18 @@
+#Keycloak Config
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://192.168.83.137:8080/realms/bl-online-store
+          jwk-set-uri: http://192.168.83.137:8080/realms/bl-online-store/protocol/openid-connect/certs
+logging:
+  level:
+    org.keycloak: ERROR
+server:
+  port: 9999
+jwt:
+  auth:
+    converter:
+      principle-attribute: preferred_username
+      resource-id: bl-online-store
